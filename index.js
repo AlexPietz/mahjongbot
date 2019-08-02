@@ -45,9 +45,9 @@ const handler = new RC.Handler()
 // Handle menu button presses
 client.on('messageReactionAdd', (messageReaction, user) => handler.handle(messageReaction, user))
 // An example set of data; moved to extra file so that only the specific code for creating a menu is in here.
-const advancedEmbed = require('./advancedButtons')
-const noviceEmbed = require('./noviceButtons')
-const privateEmbed = require('./privateButtons')
+const advancedEmbed = require('./advancedbuttons')
+const noviceEmbed = require('./novicebuttons')
+const privateEmbed = require('./privatebuttons')
 let advancedEmbedMenu = new RC.Menu(advancedEmbed.embed, advancedEmbed.buttons, advancedEmbed.options)
 let noviceEmbedMenu = new RC.Menu(noviceEmbed.embed, noviceEmbed.buttons, noviceEmbed.options)
 let privateEmbedMenu = new RC.Menu(privateEmbed.embed, privateEmbed.buttons, privateEmbed.options)
@@ -68,7 +68,8 @@ client.once('ready', () => {
 client.on('message', message => {
 	if (!message.content.startsWith(prefix) || message.author.bot) return;
 	var Channel = message.channel.name
-    if(Channel != "lfg" && Channel != "bot-stuff" && Channel != "admin") {
+    if(Channel != "lfg" && Channel != "role-request" && Channel != "bot-admin") {
+        return;
         return message.channel.send('Cannot use command here, ' + message.author);
     }
 

@@ -21,7 +21,7 @@ module.exports = {
 
 		// only execute in admin channel
 		var Channel = message.channel.name
-	    if(Channel != "admin") {
+	    if(Channel != "bot-admin") {
 	        return message.channel.send('Cannot use command here, ' + message.author);
 	    }
 
