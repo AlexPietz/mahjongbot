@@ -15,14 +15,13 @@
 
 
 <!-- PROJECT SHIELDS -->
-[![Contributors][contributors-shield]][contributors-url]
 
 
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
   <a href="https://github.com/AlexPietz/mahjongbot">
-    <img src="assets/r.png" alt="Logo">
+    <img src="assets/avatar.png" alt="Logo">
   </a>
 
   <h3 align="center">Mahjong of Light Discord Bot</h3>
