@@ -35,13 +35,13 @@ module.exports = {
 
 	    } else {
 			const tagList = await CharacterProfiles.findAll({ attributes: ['userid','lodestoneid'] });
-			console.log(tagList)
+			//console.log(tagList)
 
 
 			var tagString = ""
 
 			tagList.forEach((t) => {
-				console.log(t.get());
+				//console.log(t.get());
 				tagString = tagString + `\n` + message.guild.members.get(t.userid) + `-> <https://eu.finalfantasyxiv.com/lodestone/character/${t.lodestoneid}/>`;
 
 			});

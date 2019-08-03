@@ -59,13 +59,16 @@ module.exports = {
 
 				const addCharEmbed = new Discord.RichEmbed()
 					.setColor('#4BB543')
-					.setTitle(`Your character ${jsonParsed.Character.Name} has been succesfully added!`)
+					.setTitle(`Your character has been succesfully added!`)
 					.setDescription('You can now use !update to fetch your achievement data to be assigned the Master/Enthusiast titles.')
-					.setImage(jsonParsed.Character.Portrait)
 					.setTimestamp();
 
-				if (newToXIVAPI)
-					addCharEmbed.setDescription('It may take up to 5 minutes for achievement data to show. In 5 minutes, use !update to fetch your achievement data to be assigned the Master/Enthusiast titles.');
+				if (newToXIVAPI) {
+					addCharEmbed.setDescription('It may take up to 5 minutes for character data to show. In 5 minutes, use !update to fetch your data to be assigned the Master/Enthusiast titles.');
+				} else {
+					addCharEmbed.setTitle(`Your character ${jsonParsed.Character.Name} has been succesfully added!`)
+					.setImage(jsonParsed.Character.Portrait);
+				}
 
 				return message.reply(addCharEmbed);
 

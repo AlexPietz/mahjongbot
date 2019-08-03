@@ -80,11 +80,12 @@ module.exports = {
 				assigned = true;
 			}
 			if (!assigned) {
-				message.reply(' Could not retrieve your title/achievements. Please set your title accordingly and/or make your achievements public');
 				// Check for achievements being set to private
-				if (jsonParsed.Achievements == null) {
+				if (jsonParsed.Achievements === null) {
 					return message.reply('Could not retrieve achievement data because of your privacy settings.')
 					//https://www.reddit.com/r/ffxiv/comments/2oukmu/how_to_make_achievements_viewable_on_lodestone/
+				} else {
+					message.reply(' Could not retrieve your title/achievements. Please set your title accordingly and/or make your achievements public. If you don\'t have the Mahjong Enthusiast/Master role, use !update again once you got it :)');
 				}
 			}
 			return;
